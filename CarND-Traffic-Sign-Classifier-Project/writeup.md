@@ -12,6 +12,7 @@ Training uses the Adam optimizer, beginning from a medium learning rate (0.001) 
 ## Solution Approach
 The model managed to surpass 0.93 validation accuracy fairly quickly after some hyperparameter tweaking. Even though training is made on a powerful GPU (AWS G2 instance), increasing the batch size too much actually hurt the model performance. Validation accuracy stabilizes around the 90th epoch so we stuck with 100 epochs.
 Several improvements can be made to improve accuracy and help the network generalize better, such as:
++ data augmentation: duplicating training examples with slight modifications (rotate, shear, skew, flip, ...)
 + adding dropout to reduce overfitting,
 + going deeper: more layers,
 + batch normalization to speed up training.
