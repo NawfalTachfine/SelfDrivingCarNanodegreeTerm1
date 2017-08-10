@@ -17,7 +17,9 @@ Several improvements can be made to improve accuracy and help the network genera
 + going deeper: more layers,
 + batch normalization to speed up training.
 
-
+## Testing the model on new images
+5 stock images were downloaded to test the model. The images are well lit and have enough contrast to keep most of their features after being scaled down to 32x32 pixels, which enabled the network to have a 100% test accuracy. This is mainly due to the manual cropping of the test images, where I drew the smallest square possible that contains the sign. In a production pipeline, there should be a shape detector that zooms on the signs before feeding them to the classifier, and the better the detection, the more accurate the classifier. Before manual cropping, test accuracy was around 20%-40%, which meant that model had a very hard time generalizing to real-world cases. Once the images were cropped into squares, accuracy jumped to 100% which is closest to the validation accuracy of 95%+.
+One other difficulty to generalization is the angle from which the photos were taken, which distorts them and make it difficult for the classifier to recognize them. The network used managed to overcome this issue thanks to the quality of the test images, but it would have been better to augment training data with sufficiently distorted images so that the network would learn to deal with multiple angles.
 
 
 
