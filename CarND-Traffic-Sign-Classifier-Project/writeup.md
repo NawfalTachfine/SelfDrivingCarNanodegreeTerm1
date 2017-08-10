@@ -1,6 +1,6 @@
 # P2 - Traffic Sign Classification - Writeup
 
-## Preprocessing
+## Preprocessing
 Before training, the pixel intensities of the images were normalized so that they fall between -1 and 1, which is the bare minimum before feeding the values to a neural net. We then convert the images values to grayscale, since most of the information in traffic signs is contained in their shapes and symbols on them.
 
 ## Model Architecture
